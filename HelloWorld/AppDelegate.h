@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EmployeeTableViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) EmployeeTableViewController *tvc;
+
+@property (nonatomic, strong) NSMutableArray *employees;
 
 @end

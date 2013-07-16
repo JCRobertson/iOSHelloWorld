@@ -7,19 +7,62 @@
 //
 
 #import "AppDelegate.h"
+#import "Employee.h"
+#import "EmployeeTableViewController.h"
 
 @implementation AppDelegate
+
+@synthesize employees;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    employees = [NSMutableArray arrayWithCapacity:20];
+	Employee *employee = [[Employee alloc] init];
+	employee.name = @"Bill";
+	employee.position = @"President";
+	employee.favorite_number = 5;
+	[employees addObject:employee];
+	employee = [[Employee alloc] init];
+	employee.name = @"Oscar";
+	employee.position = @"Vice President";
+	employee.favorite_number = 4;
+	[employees addObject:employee];
+	employee = [[Employee alloc] init];
+	employee.name = @"Dave";
+	employee.position = @"Code Monkey";
+	employee.favorite_number = 2;
+	[employees addObject:employee];
+    employee = [[Employee alloc] init];
+	employee.name = @"John";
+	employee.position = @"Manager";
+	employee.favorite_number = 3;
+	[employees addObject:employee];
+    employee = [[Employee alloc] init];
+	employee.name = @"Tom";
+	employee.position = @"Intern";
+	employee.favorite_number = 1;
+	[employees addObject:employee];
+    
+//    UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
+//    
+//    UIViewController *viewController = [[navController viewControllers] objectAtIndex:0];
+//    
+//	UITabBarController *tabBarController = [[viewController tabBar] objectAtIndex:0];  //TODO What should I do here?
+//    
+//	UINavigationController *navigationController = [[tabBarController viewControllers] objectAtIndex:0];
+//    
+//	TableViewController *employeesViewController = [[navigationController viewControllers] objectAtIndex:0];
+//    
+//	employeesViewController.employees = employees;
     return YES;
+
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. positions should use this method to pause the position.
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
